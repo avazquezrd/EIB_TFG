@@ -1,0 +1,87 @@
+% ------------------------------------------------------------ %
+% DATOS DEL DOCUMENTO                                          %
+% ------------------------------------------------------------ %
+
+% Título:
+\newcommand{\titulo}{<Título del trabajo>}
+% Curso académico:
+\newcommand{\curso}{<XXXX-XXXX>} 
+% Carrera:
+\newcommand{\carrera}{Grado en XXXXXXXX} 
+% Alumno/Alumna:
+\newcommand{\alumno}{<apellido 1, apellido 2, nombre>}
+% Dirección 1 del TFG:
+\newcommand{\direccionA}{<apellido 1, apellido 2, nombre>}
+% Dirección 2 del TFG (si no la hay, comentar la línea aquí y también en preamble.tex):
+\newcommand{\direccionB}{<apellido 1, apellido 2, nombre>}
+% Fecha:
+\newcommand{\fecha}{<XXXX, día, mes, año>}
+% ------------------------------------------------------------ %
+
+\input{preamble.tex}
+
+% ------------------------------------------------------------ %
+
+\begin{document}
+	
+	\portada
+	\thispagestyle{empty}
+	\setcounter{page}{0}
+	
+	\renewcommand{\baselinestretch}{0.75}\normalsize
+	\tableofcontents
+	\renewcommand{\baselinestretch}{1}\normalsize
+
+	% RESUMEN:
+	
+	\setcounter{chapter}{-4}	
+	\include{src/abstract}	
+	\pagebreak
+	
+	% ÍNDICES:
+	
+	\cleardoublepage
+	\setcounter{chapter}{-3}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\listtablename}
+	\listoftables
+	
+	\cleardoublepage
+	\setcounter{chapter}{-2}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\listfigurename}
+	\listoffigures
+
+	\cleardoublepage
+	\setcounter{chapter}{-1}
+	\include{src/acronimos} % Lista de acrónimos
+	
+	% CONTENIDO:
+	
+	\include{src/intro} % 1p
+	\include{src/contexto} % 1-3p
+	\include{src/alcance} % 1-2p
+	\include{src/beneficios} % 2-3p
+	\include{src/estadodelarte} % 4-6p
+	%\include{src/alternativas} % 4-6p
+	%\include{src/solucion} % 1-2p / - / - / 5p
+	\include{src/metodologia} % 2-3p / <15p / <15p / <10p
+	\include{src/gantt} % 2p
+	%\include{src/mediosbasicos} % <10p
+	\include{src/presupuesto} % 2p
+	%\include{src/rentabilidad} % 2p
+	\include{src/riesgos} % 1-2p
+	\include{src/conclusiones} % 1p
+	
+	% FUENTES:
+	
+	\include{src/fuentes}
+	
+	% ANEXOS:
+	
+	\include{src/normativa}
+	\include{src/planos}
+	\include{src/resultados}
+
+	 
+\end{document}

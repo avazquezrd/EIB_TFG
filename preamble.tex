@@ -3,7 +3,7 @@
 % ------------------------------------------------------------ %
 
 \documentclass[11pt, a4paper]{report}
-\usepackage[spanish, activeacute]{babel}
+\usepackage[spanish, es-tabla, activeacute]{babel}
 % \usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage{hyperref}
@@ -73,12 +73,18 @@
  ]{EHUSerif}
  
 % ------------------------------------------------------------ %
-% COMANDO PARA CENTRAR IMÁGENES DIRECTAMENTE                   %
+% INSERTAR ETIQUETA DEBAJO DE LAS TABLAS					   %
+% ------------------------------------------------------------ %
+
+ 
+% ------------------------------------------------------------ %
+% COMANDO PARA CENTRAR FIGURAS DIRECTAMENTE                    %
 % \im[width, caption]{path}				                       %
 % ------------------------------------------------------------ %
 
 \DeclareCaptionFont{ehu}{\fontsize{9}{10}\mdseries}
 \usepackage[font={ehu}, labelfont={bf}]{caption}
+\captionsetup[table]{position=bottom}
 
 \makeatletter
 
@@ -181,7 +187,8 @@
 			\renewcommand{\baselinestretch}{0.75}
 			\node (A) at (0.03cm,-0.03cm) [inner sep=20pt, draw, minimum width=\linewidth, text width=13cm, minimum height=104pt, fill=black, align=center]
 			{\huge{\MakeUppercase{\textbf{\textit{\titulo}}}}};
-			\node (B) at (0,0) [inner sep=20pt, draw, minimum width=\linewidth, text width=13cm, minimum height=104pt, fill=white, align=center] {\huge{\MakeUppercase{\textbf{\textit{\titulo}}}}};
+			\node (B) at (0,0) [inner sep=20pt, draw, minimum width=\linewidth, text width=13cm, minimum height=104pt, fill=white, align=center] 
+			{\huge{\MakeUppercase{\textbf{\textit{\titulo}}}}};
 		\end{tikzpicture}
 	\end{center}
 	\renewcommand{\baselinestretch}{1.25}

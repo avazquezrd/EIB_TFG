@@ -36,9 +36,3 @@ Para modificar detalles como `Alumno/Alumna` o eliminar una de las líneas de la
 	\end{tikzpicture}
 }
 ```
-Se pueden añadir figuras centradas usando el comando `\im`. Si no se indica, se tomará como anchura `\linewidth` y no se añadirá ningún título pero sí la numeración (no recomendado).
-```
-\im[width=10pt, caption={Título, también se muestra en el índice}]{imgpath}
-\im[caption={Título, también se muestra en el índice}]{imgpath}
-\im{imgpath}
-```

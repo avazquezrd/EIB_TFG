@@ -28,57 +28,49 @@
 	\thispagestyle{empty}
 	\setcounter{page}{0}
 	
-	\renewcommand{\baselinestretch}{0.75}\normalsize
-	\tableofcontents
-	\renewcommand{\baselinestretch}{1}\normalsize
-	
 	% RESUMEN:
-	
-	\setcounter{chapter}{-4}	
 	\include{src/abstract}	
 	\pagebreak
 	
+	\setcounter{tocdepth}{1}
+	\tableofcontents
+	
 	% ÍNDICES:
-	
 	\cleardoublepage
-	\setcounter{chapter}{-3}
-	\phantomsection
-	\addcontentsline{toc}{chapter}{\listtablename}
-	\listoftables
-	
-	\cleardoublepage
-	\setcounter{chapter}{-2}
 	\phantomsection
 	\addcontentsline{toc}{chapter}{\listfigurename}
-	\listoffigures
+	\listoffigures % Lista de figuras
 	
 	\cleardoublepage
-	\setcounter{chapter}{-1}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\listtablename}
+	\listoftables % Lista de tablas
+	
+	\cleardoublepage
 	\include{src/acronimos} % Lista de acrónimos
 	
 	% MEMORIA:
 	
 	\include{src/intro} % 1p
 	\include{src/contexto} % 1-3p
-	\include{src/alcance} % 1-2p
+	%	\include{src/estadodelarte} % 4-6p
+	\include{src/objetivos} % 1-2p
 	\include{src/beneficios} % 2-3p
-	\include{src/estadodelarte} % 4-6p
-	%\include{src/alternativas} % 4-6p
-	%\include{src/riesgos} % 4-6p
+	\include{src/alternativas} % 4-6p
+	%	\include{src/riesgos} % 4-6p
 	\include{src/solucion} % 1-2p / - / - / 5p
 	
 	% METODOLOGÍA SEGUIDA EN EL DESARROLLO DEL TRABAJO:
 	
-	\include{src/metodologia} % 2-3p / <15p / <15p / <10p
 	\include{src/gantt} % 2p
-	\include{src/algoritmos} % ?
-	\include{src/resultados} % ?
-	\include{src/planificacion} % ?
+	% 	\include{src/algoritmos} % ?
+	%	\include{src/resultados} % ?
+	% 	\include{src/planificacion} % ?
 	
 	% ASPECTOS ECONÓMICOS:
 	
 	\include{src/presupuesto} % 2p
-	\include{src/rentabilidad} % 2p
+	%	\include{src/rentabilidad} % 2p
 	
 	% CONCLUSIONES:
 	
@@ -86,12 +78,12 @@
 	
 	% BIBLIOGRAFÍA:
 	
-	\include{src/fuentes}
+	\include{src/bibliografia}
 	
 	% ANEXOS:
 	
-	\include{src/normativa}
-	\include{src/planos}
-	\include{src/manuales}
-	 
+	%	\include{src/normativa}
+	%	\include{src/planos}
+	%	\include{src/manuales}
+	
 \end{document}

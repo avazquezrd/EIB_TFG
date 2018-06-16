@@ -1,6 +1,10 @@
 # Plantilla para la memoria de un TFG
 Plantilla para la creación del Trabajo de Fin de Grado siguiendo la normativa de la Escuela de Ingeniería de Bilbao (UPV/EHU) y la [guía de expresión de marca de la UPV/EHU](https://www.ehu.eus/documents/10136/3950780/GUIA_EXPRESION_UPV_es.pdf/4d538337-2577-4260-ae02-d0fed29a26b5).
 
+> **Nota:** Se recomienda usar `XeLaTex` como compilador.
+
+## Personalización de la portada
+
 En el archivo `main.tex` se deben introducir los datos de la portada del TFG:
 ```
 % ------------------------------------------------------------ %

@@ -22,6 +22,13 @@
 \usepackage[bottom]{footmisc}
 \usetikzlibrary{positioning}
 
+\definecolor{eus-color}{gray}{0.4}
+\definecolor{eng-color}{gray}{0.5}
+
+\newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
+\addtocontents{lof}{\protect\noaddvspace}
+\addtocontents{lot}{\protect\noaddvspace}
+
 % ------------------------------------------------------------ %
 % NUMERACIÓN CONTINUA DE FIGURAS Y TABLAS                      %
 % ------------------------------------------------------------ %
@@ -40,46 +47,46 @@
 % FUENTES DEL DOCUMENTO                                        %
 % ------------------------------------------------------------ %
 
-\setmainfont[
-Path          = fonts/,
-Ligatures     = TeX,
-UprightFont   = EHUSans-Light.otf,
-BoldItalicFont= EHUSans-BoldItalic.otf,
-BoldFont      = EHUSans-Bold.otf,
-ItalicFont    = EHUSans-LightItalic.otf
-]{EHUSans}
+ \setmainfont[
+ Path          = fonts/,
+ Ligatures     = TeX,
+ UprightFont   = EHUSans-Light.otf,
+ BoldItalicFont= EHUSans-BoldItalic.otf,
+ BoldFont      = EHUSans-Bold.otf,
+ ItalicFont    = EHUSans-LightItalic.otf
+ ]{EHUSans}
 
 \newfontfamily{\sansthick}[
-Path          = fonts/,
-BoldFont      = EHUSans-Bold.otf,
-UprightFont   = EHUSans-Regular.otf
-]{EHUSans}
-
-\newfontfamily{\sansblack}[
-Path          = fonts/,
-UprightFont   = EHUSans-Black.otf
-]{EHUSans}
-
-\newfontfamily{\serif}[
-Path          = fonts/,
-Ligatures     = TeX,
-UprightFont   = EHUSerif-Light.otf,
-BoldItalicFont= EHUSerif-BoldItalic.otf,
-BoldFont      = EHUSerif-Bold.otf,
-ItalicFont    = EHUSerif-LightItalic.otf
-]{EHUSerif}
-
-\newfontfamily{\serifthick}[
-Path          = fonts/,
-BoldFont      = EHUSerif-Bold.otf,
-UprightFont   = EHUSerif-Regular.otf
-]{EHUSerif}
-
-\newfontfamily{\serifblack}[
-Path          = fonts/,
-UprightFont   = EHUSerif-Black.otf
-]{EHUSerif}
-
+ Path          = fonts/,
+ BoldFont      = EHUSans-Bold.otf,
+ UprightFont   = EHUSans-Regular.otf
+ ]{EHUSans}
+ 
+ \newfontfamily{\sansblack}[
+ Path          = fonts/,
+ UprightFont   = EHUSans-Black.otf
+ ]{EHUSans}
+ 
+ \newfontfamily{\serif}[
+ Path          = fonts/,
+ Ligatures     = TeX,
+ UprightFont   = EHUSerif-Light.otf,
+ BoldItalicFont= EHUSerif-BoldItalic.otf,
+ BoldFont      = EHUSerif-Bold.otf,
+ ItalicFont    = EHUSerif-LightItalic.otf
+ ]{EHUSerif}
+  
+ \newfontfamily{\serifthick}[
+ Path          = fonts/,
+ BoldFont      = EHUSerif-Bold.otf,
+ UprightFont   = EHUSerif-Regular.otf
+ ]{EHUSerif}
+ 
+ \newfontfamily{\serifblack}[
+ Path          = fonts/,
+ UprightFont   = EHUSerif-Black.otf
+ ]{EHUSerif}
+ 
 % ------------------------------------------------------------ %
 % ETIQUETAS EN LAS TABLAS Y FIGURAS							   %
 % ------------------------------------------------------------ %
@@ -102,10 +109,10 @@ UprightFont   = EHUSerif-Black.otf
 % ------------------------------------------------------------ %
 
 \titleformat{\chapter}%
-{\normalfont\bfseries\Huge}{\thechapter.}{10pt}{}
+  {\normalfont\bfseries\Huge}{\thechapter.}{10pt}{}
 \newpagestyle{mystyle}{
-	\sethead[][\thechapter.\enspace\chaptertitle][]{}{\thesection~\sectiontitle}{}
-	\setfoot{}{\thepage}{}}
+  \sethead[][\thechapter.\enspace\chaptertitle][]{}{\thesection~\sectiontitle}{}
+\setfoot{}{\thepage}{}}
 
 % ------------------------------------------------------------ %
 % MÁRGENES Y DISTANCIA ENTRE PÁRRAFOS						   %
@@ -158,32 +165,32 @@ UprightFont   = EHUSerif-Black.otf
 		\Huge{\textbf{\MakeUppercase{Trabajo de fin de grado}}}
 		\\[1\baselineskip]
 		\begin{tikzpicture}
-		\renewcommand{\baselinestretch}{0.75}
-		\node (A) at (0.03cm,-0.03cm) [inner sep=20pt, draw, minimum width=\linewidth, text width=13cm, minimum height=104pt, fill=black, align=center]
-		{\huge{\MakeUppercase{\textbf{\textit{\titulo}}}}};
-		\node (B) at (0,0) [inner sep=20pt, draw, minimum width=\linewidth, text width=13cm, minimum height=104pt, fill=white, align=center] 
-		{\huge{\MakeUppercase{\textbf{\textit{\titulo}}}}};
+			\renewcommand{\baselinestretch}{0.75}
+			\node (A) at (0.03cm,-0.03cm) [inner sep=20pt, draw, minimum width=\linewidth, text width=13cm, minimum height=104pt, fill=black, align=center]
+			{\huge{\MakeUppercase{\textbf{\textit{\titulo}}}}};
+			\node (B) at (0,0) [inner sep=20pt, draw, minimum width=\linewidth, text width=13cm, minimum height=104pt, fill=white, align=center] 
+			{\huge{\MakeUppercase{\textbf{\textit{\titulo}}}}};
 		\end{tikzpicture}
 	\end{center}
 	\renewcommand{\baselinestretch}{1.25}
 	\begin{tikzpicture}[remember picture, overlay]
-	\node (C) at ([yshift=-6.95cm, xshift=9.7cm]current page.west) [inner sep=10pt, draw, thick, minimum width=13.34cm, minimum height=64pt, align=left, fill=white]{};
-	\node (D) [right=0.2cm of C.west, anchor=west, align=left]
-	{\small{\textbf{Alumno: }\alumno}\\
-		\small{\textbf{Directora: }\direccionA}
-		% Comentar la siguiente línea si sólo hay una direcicón del TFG. Eliminar también de la anterior el (1).
-		%\\\small{\textbf{Director/Directora (2): }\direccionB}
-	};
+		\node (C) at ([yshift=-6.95cm, xshift=9.7cm]current page.west) [inner sep=10pt, draw, thick, minimum width=13.34cm, minimum height=64pt, align=left, fill=white]{};
+		\node (D) [right=0.2cm of C.west, anchor=west, align=left]
+		{\small{\textbf{Alumno: }\alumno}\\
+			\small{\textbf{Directora: }\direccionA}
+			% Comentar la siguiente línea si sólo hay una direcicón del TFG. Eliminar también de la anterior el (1).
+			%\\\small{\textbf{Director/Directora (2): }\direccionB}
+			};
 	\end{tikzpicture}
 	\renewcommand{\baselinestretch}{1}
 	\begin{tikzpicture}[remember picture, overlay]
-	\node (E) at ([yshift=-9.4cm, xshift=8.5cm]current page.west) [inner sep=10pt, draw, thick, minimum width=13.34cm, minimum height=27pt, align=left, fill=white]{};
-	\node (F) [right=1.4cm of E.west, anchor=west]
-	{\small{\textbf{Curso: }\curso}};
+		\node (E) at ([yshift=-9.4cm, xshift=8.5cm]current page.west) [inner sep=10pt, draw, thick, minimum width=13.34cm, minimum height=27pt, align=left, fill=white]{};
+		\node (F) [right=1.4cm of E.west, anchor=west]
+		{\small{\textbf{Curso: }\curso}};
 	\end{tikzpicture}
 	\begin{tikzpicture}[remember picture, overlay]
-	\node (G) at ([yshift=-11.6cm, xshift=13.4cm]current page.west) [inner sep=10pt, draw, thick, minimum width=7.93cm, minimum height=27pt, align=left, fill=white]{};
-	\node (H) [left=0.2cm of G.east, anchor=east]
-	{\small{\textbf{Fecha: }\fecha}};
+		\node (G) at ([yshift=-11.6cm, xshift=13.4cm]current page.west) [inner sep=10pt, draw, thick, minimum width=7.93cm, minimum height=27pt, align=left, fill=white]{};
+		\node (H) [left=0.2cm of G.east, anchor=east]
+		{\small{\textbf{Fecha: }\fecha}};
 	\end{tikzpicture}
 }
